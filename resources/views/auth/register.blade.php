@@ -80,8 +80,11 @@
 
                             <div class="col-md-6">
                             <div class="captcha">
-                                <span>{!! captcha_img('flat') !!}</span>
-                                <button type="submit" class="btn btn-success btn-refresh" onclick="refreshCaptcha()">Refresh</button>
+                            <img src="{{captcha_src('flat')}}" onclick="this.src='/captcha/flat?'+Math.random()" id="captchaCode" alt="" class="captcha">
+                   
+                                <a rel="nofollow" href="javascript:;" onclick="document.getElementById('captchaCode').src='captcha/flat?'+Math.random()" class="refresh">                     
+                                    <button type="button" class="btn btn-info btn-refresh">Refresh</i></button>
+                                </a>
                             </div>
 
                                 <input id="captcha" type="captcha" class="form-control mt-2 @error('captcha') is-invalid @enderror" name="captcha" placeholder="Enter Captcha">
