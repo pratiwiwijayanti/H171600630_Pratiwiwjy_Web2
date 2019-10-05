@@ -12,4 +12,19 @@ class BeritaController extends Controller
         
         return view('berita.index',compact('berita'));
     }
+    public function create()
+    {
+        return view('berita.create');
+    }
+    public function show($id)
+    {
+        $berita=Berita::find($id);
+        return view('berita.show',compact('berita'));
+    }
+    public function store(Request $request)
+    {
+        $input = $request->all();
+        Berita::create($input);
+        return redirect(route('berita.index'));
+    }
 }
