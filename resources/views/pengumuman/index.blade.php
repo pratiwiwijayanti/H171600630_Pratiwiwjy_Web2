@@ -26,7 +26,15 @@
                         <td>{!! $item->isi !!}</td>
                         <td>{!! $item->kategori_pengumuman_id !!}</td>
                         <td>{!! $item->users_id !!}</td>
-                        <td><a href="{!!route('pengumuman.show',[$item->id])!!}">Lihat</a></td>
+                        <td><a href="{!! route('pengumuman.show',[$item->id])!!}">Lihat</a></td>
+                        <td><a href="{!! route('pengumuman.edit',[$item->id]) !!}" >edit</a></td>
+
+                        <td>
+								{!! Form::open(['route' => ['pengumuman.destroy',$item->id], 'method' => 'delete']); !!}
+					            {!! Form::submit('Hapus',['class'=>'btn btn-danger']); !!}
+					            {!! Form::close() !!}
+							</td>
+
                         </tr>
                         @endforeach
                     </tbody>

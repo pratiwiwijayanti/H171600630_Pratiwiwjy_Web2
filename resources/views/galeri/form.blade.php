@@ -3,7 +3,7 @@
     <label for="nama" class="col-md-2 col-form-label text-md-right">{{ __('Nama') }}</label>
 
         <div class="col-md-10">
-        <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="{{ old('nama') }}" required autocomplete="nama" autofocus>
+        {!! Form::text('nama', null ,['class' => 'form-control']); !!}
 
          @error('nama')
         <span class="invalid-feedback" role="alert">
@@ -17,7 +17,7 @@
     <label for="path" class="col-md-2 col-form-label text-md-right">{{ __('Path') }}</label>
 
         <div class="col-md-10">
-        <input id="path" type="text" class="form-control @error('path') is-invalid @enderror" name="path" value="{{ old('path') }}" required autocomplete="path" autofocus>
+        {!! Form::text('path', null ,['class' => 'form-control']); !!}
 
          @error('path')
         <span class="invalid-feedback" role="alert">
@@ -32,7 +32,7 @@
     <label for="kategori_galeri_id" class="col-md-2 col-form-label text-md-right">{{ __('Kategori Galeri') }}</label>
 
         <div class="col-md-10">
-        {!! Form::select('kategori_galeri_id',$kategoriGaleri, null,["class"=>"form-control","required"] ); !!}
+        {!! Form::select('kategori_galeri_id',$KategoriGaleri, null, ['class' => 'form-control']); !!}
 
 
          @error('kategori_galeri_id')

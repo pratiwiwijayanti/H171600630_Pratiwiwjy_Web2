@@ -4,8 +4,7 @@
                             <label for="judul" class="col-md-4 col-form-label text-md-right">{{ __('judul') }}</label>
 
                             <div class="col-md-6">
-                                <input id="judul" type="text" class="form-control @error('judul') is-invalid @enderror" name="judul" value="{{ old('judul') }}" required autocomplete="judul" autofocus>
-
+                            {!! Form::text('judul', null ,['class' => 'form-control']); !!}
                                 @error('judul')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -31,8 +30,7 @@
                             <label for="kategori_pengumuman_id" class="col-md-4 col-form-label text-md-right">{{ __('kategori_pengumuman_id') }}</label>
 
                             <div class="col-md-6">
-                                <input id="kategori_pengumuman_id" type="text" class="form-control @error('kategori_pengumuman_id') is-invalid @enderror" name="kategori_pengumuman_id" value="{{ old('kategori_pengumuman_id') }}" required autocomplete="kategori_pengumuman_id" autofocus>
-
+                            {!! Form::select('kategori_pengumuman_id',$KategoriPengumuman, null, ['class' => 'form-control']); !!}
                                 @error('kategori_pengumuman_id')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

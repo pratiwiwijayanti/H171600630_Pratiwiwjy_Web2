@@ -30,8 +30,13 @@
                             <td>{!! $item->path !!}</td>
                             <td>{!! $item->kategori_galeri_id !!}</td>
                             <td>{!! $item->created_at->format('d/m/Y H:i:s') !!}</td>
-                            <td>
-                                <a href="{!! route('galeri.show',[$item->id]) !!}">Detail</a>
+                                <td><a href="{!! route('galeri.show',[$item->id]) !!}">Detail</a>
+                                <td><a href="{!! route('galeri.edit',[$item->id]) !!}" class="btn btn-primary">edit</a></td>
+                        <td>
+								{!! Form::open(['route' => ['galeri.destroy',$item->id], 'method' => 'delete']); !!}
+					            {!! Form::submit('Hapus',['class'=>'btn btn-danger']); !!}
+					            {!! Form::close() !!}
+							
                             </td>
                             </tr>
                             @endforeach

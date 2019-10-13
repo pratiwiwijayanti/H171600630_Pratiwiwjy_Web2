@@ -24,6 +24,12 @@
                         <td>{!! $item->nama !!}</td>
                         <td>{!! $item->users_id !!}</td>
                         <td><a href="{!!route('kategori_berita.show',[$item->id])!!}">Lihat</a></td>
+                        <td><a href="{!! route('kategori_berita.edit',[$item->id]) !!}" class="btn btn-primary">edit</a></td>
+                        <td>
+								{!! Form::open(['route' => ['kategori_berita.destroy',$item->id], 'method' => 'delete']); !!}
+					            {!! Form::submit('Hapus',['class'=>'btn btn-danger']); !!}
+					            {!! Form::close() !!}
+							</td>
                         </tr>
                         @endforeach
                     </tbody>

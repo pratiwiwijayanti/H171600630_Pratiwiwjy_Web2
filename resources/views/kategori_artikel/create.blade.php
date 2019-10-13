@@ -8,8 +8,9 @@
                 <div class="card-header">{{ __('Tambah Data') }}</div>
 
                 <div class="card-body">
-                <form method="post" action="{!!route('kategori_artikel.store')!!}"> 
-                @include('kategori_artikel.form')
+                {!! Form::open(['route' => 'kategori_artikel.store', 'method' => 'post']); !!}
+              		@include('kategori_artikel.form')
+              	{!! Form::close() !!}
                 </form>
                 </div>
             </div> 
